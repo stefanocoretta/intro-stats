@@ -31,19 +31,25 @@ class: inverse
 
 # Who am I?
 
-Stefano [ˈstefano]/[ˈstɛfnəʊ]
+.f2[Stefano [ˈstefano]/[ˈstɛfnəʊ]]
 
-PhD in Linguistics from the University of Manchester (speech production, ultrasound tongue imaging, electroglottography).
+PhD in Linguistics from the University of Manchester. .f6[(Diss on voicing and segment duration, ultrasound tongue imaging, electroglottography)]
 
-Post-doc at the Institute for Phonetics in Munich, Germany.
+Post-doc at the Institute for Phonetics in Munich, Germany. .f6[(ERC project on nasalisation, real-time MRI)]
 
-Now the Senior Teaching Coordinator for Stats at LEL.
+.f1[Now]...
+
+.f3[Senior Teaching Coordinator for Stats at LEL.]
 
 ---
 
-# How do you feel today?
+# How are you feeling today?
 
 .center[<iframe src="https://wall.sli.do/event/hbcigzia?section=6c613f12-b61e-4f61-90a9-291ee28c25af" width="700" height="400"></iframe>]
+
+???
+
+Slido poll "How are you feeling today?".
 
 ---
 
@@ -61,11 +67,23 @@ Where does knowledge come from?
 
 ---
 
-# Sources of Knowledge
+# Sources of knowledge
 
 .center[
 ![:scale 55%](img/sources-knowledge.png)
 ]
+
+???
+
+One way of classifying sources of knowledge:
+
+- Authority
+
+- Intuition
+
+- Reason (logic)
+
+- Observation.
 
 ---
 
@@ -77,13 +95,15 @@ Where does knowledge come from?
 
 ???
 
-*Empirical* just means 'based on observation'.
+Observations generate **empirical data**.
 
-Check out the etymology of the word *empiric(al)* here: <https://en.wiktionary.org/wiki/empiric#English>
+*Empirical* just means 'based on experience', where *experience* here means 'observation'.
 
-Do not mix up empirical methods with experimental methods. Experiments are a kind of empirical method.
+How can we use observations/empirical data?
 
-How does the process look like?
+NOTE: Do not mix up empirical methods with experimental methods. Experiments are a kind of empirical method.
+
+EXTRA: Check out the etymology of the word *empiric(al)* here: <https://en.wiktionary.org/wiki/empiric#English>
 
 ---
 
@@ -125,8 +145,6 @@ We can use **inference**.
 
 **Inference** is the process of understanding something about a population based on the sample (aka the data) taken from that population.
 
-From sample/data to population.
-
 ---
 
 class: middle center inverse
@@ -135,18 +153,19 @@ class: middle center inverse
 
 ???
 
-Inference based on data does not guarantee the answer to our questions are right/true.
+However, inference based on data does not guarantee that the answers to our questions are right/true.
 
 In fact, any observation we make comes with a degree of **uncertainty and variability**.
 
 EXTRA: Check out this article: <https://www.scientificamerican.com/article/if-you-say-science-is-right-youre-wrong/>
+
+EXTRA: Find out about Popper's view of falsification and fallibilism.
 
 ---
 
 class: inverse
 
 # Uncertainty and variability
-
 
 .center[
 ![](img/pliny.jpg)
@@ -160,7 +179,7 @@ Dealing with variability among observations of the same phenomenon.
 
 ---
 
-# WHAT IS STATISTICS?
+# What is statistics?
 
 .center[<iframe src="https://wall.sli.do/event/hbcigzia?section=6c613f12-b61e-4f61-90a9-291ee28c25af" width="700" height="400"></iframe>]
 
@@ -210,19 +229,35 @@ class: middle
 
 # Scientific crisis
 
-Reproducibility
+.center[
+![:scale 80%](img/turing-way.png)
+]
 
-Replicability
 
-Generalisability
 
-(Robustness)
+
+
+
+
+
+
+
 
 ---
 
 class: center middle inverse
 
 # BREAK
+
+
+
+
+
+
+
+
+
+
 
 ---
 

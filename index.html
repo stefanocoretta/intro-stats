@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to Language Research Week 7</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Stefano Coretta" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to Language Research<br>Week 7
+## Statistical literacy
+### Stefano Coretta
+### 2016/12/12 (updated: 2021-10-28)
+
+---
+
+
+
+
+
+class: inverse
+background-image: url(img/who-am-i.jpg)
+
+---
+
+class: inverse
+
+# Who am I?
+
+Stefano [ˈstefano]/[ˈstɛfnəʊ]
+
+
+
+---
+
+# How do you feel today?
+
+.center[&lt;iframe src="https://wall.sli.do/event/hbcigzia?section=6c613f12-b61e-4f61-90a9-291ee28c25af" width="700" height="400"&gt;&lt;/iframe&gt;]
+
+---
+
+class: center, middle
+
+![](https://saffroninteractive.com/wp-content/uploads/2014/09/Knowledge-1024x576.png)
+
+???
+
+What is knowledge?
+
+What does "knowledge" mean to you?
+
+Where does knowledge come from?
+
+---
+
+# Sources of Knowledge
+
+.center[
+![:scale 55%](img/sources-knowledge.png)
+]
+
+---
+
+# Sources of knowledge
+
+.center[
+![:scale 55%](img/sources-knowledge-empirical.png)
+]
+
+???
+
+*Empirical* just means 'based on observation'.
+
+Check out the etymology of the word *empiric(al)* here: &lt;https://en.wiktionary.org/wiki/empiric#English&gt;
+
+Do not mix up empirical methods with experimental methods. Experiments are a kind of empirical method.
+
+How does the process look like?
+
+---
+
+# Inference
+
+.center[
+![](img/inference.png)
+]
+
+???
+
+We want to answer a question about something.
+
+From observation to an answer using inference.
+
+
+---
+
+class: inverse
+
+# Uncertainty and variability
+
+.center[&lt;a href="https://www.azquotes.com/quote/827060" title="Pliny the Elder quote"&gt;&lt;img src="//www.azquotes.com/picture-quotes/quote-the-only-certainty-is-uncertainty-pliny-the-elder-82-70-60.jpg" alt="The only certainty is uncertainty - Pliny the Elder"&gt;&lt;/a&gt;]
+
+???
+
+Dealing with uncertainty in the observation.
+
+Dealing with variability among observations of the same phenomenon.
+
+---
+
+# WHAT IS STATISTICS?
+
+.center[&lt;iframe src="https://wall.sli.do/event/hbcigzia?section=6c613f12-b61e-4f61-90a9-291ee28c25af" width="700" height="400"&gt;&lt;/iframe&gt;]
+
+---
+
+# What is statistics?
+
+- Statistics is the **science** concerned with developing and studying methods for collecting, analyzing, interpreting and presenting empirical data. (From [UCI Department of Statistics](https://www.stat.uci.edu/what-is-statistics/))
+
+--
+
+- Statistics is the **technology** of extracting information, illumination and understanding from data, often in the face of uncertainty. (From the [British Academy](https://www.thebritishacademy.ac.uk/blog/what-is-statistics/))
+
+--
+
+- Statistics is a **mathematical and conceptual** discipline that focuses on the relation between data and hypotheses. (From the [Standford Encyclopedia of Philosophy](https://plato.stanford.edu/entries/statistics/))
+
+--
+
+- Statistics as the **art** of applying the science of scientific methods. (From [ORI Results](https://www.oriresults.com/articles/blog-posts/the-art-of-statistics/), [Nature](https://www.nature.com/articles/d41586-019-00898-0))
+
+---
+
+# What is statistics?
+
+&gt; **Statistic is both a science and an art**.
+&gt;
+&gt; It is a **science** in that its methods are basically systematic and have general application and an **art** in that their successful application depends, to a considerable degree, on the skill and special experience of the statistician, and on his knowledge of the field of application.
+
+—L. H. C. Tippett
+
+---
+
+# But... All that glisters is not gold
+
+Statistics can be misused.
+
+Science Apocalypse
+
+---
+
+# Scientific crisis
+
+Reproducibility
+
+Replicability
+
+Generalisability
+
+(Robustness)
+
+---
+
+# How do you do statistics?
+
+- You deal with uncertainty.
+
+- You deal with variation.
+
+---
+
+# How do you do statistics?
+
+![](img/eda.png)
+
+???
+
+In other words, how do you do data analysis?
+
+---
+
+Data visualisation and modelling
+
+---
+
+# Data viz
+
+---
+
+# Modelling (and testing)
+
+All models are wrong, some are less wrong than others.
+
+Uncertainty and variation =&gt; ESTIMATION.
+
+---
+
+# One model to fit them all
+
+Linear regression models
+
+or simply Linear models
+
+---
+
+[data from Bodo's book]
+
+# Fit a line
+
+
+
+---
+
+# Give me a line and I will model the world
+
+Linear models can be used for virtually any type of data.
+
+Once you learn how to run a linear model, you can use it with anything.
+
+---
+
+# Types of outcome data
+
+
+.panelset[
+.panel[.panel-name[Numeric]
+
+- Positive and negative numbers (can be 0).
+
+  - Decibel (dB).
+  
+  - Log frequencies.
+
+- Only positive numbers (cannot be 0).
+
+  - Duration of speech units (segments, gestures, syllables, words, sentences, etc)
+  
+  - Hertz (f0 and formant frequencies).
+
+]
+
+.panel[.panel-name[Count]
+
+- Number of hits in a corpus.
+
+- Number of occurrences of Double Object construction vs Indirect Object construction.
+
+- Number of VO vs OV languages.
+
+- Number of hand-pointing gestures.
+
+- Number of hesitations.
+
+- Any count of something...
+
+]
+
+.panel[.panel-name[Ordered scales]
+
+- Any numbered scale (Likert, 0-10, 0-5, etc).
+
+- Ratings.
+
+  - Acceptability judgments.
+
+  - Language attitude.
+
+]
+
+.panel[.panel-name[Binary]
+
+- Yes/no.
+
+- Right/Wrong.
+
+- True/false.
+
+- Real word/nonce word.
+
+- Anything that can be conceptualised as 0 vs 1.
+
+]
+
+.panel[.panel-name[Categorical]
+
+Unordered groups of 2 or more levels.
+
+- North/Center/South.
+
+- Young/Adult.
+
+- Non-binary/Fluid/Female/Male.
+
+]
+
+.panel[.panel-name[Other]
+
+- Time series
+
+- Coordinates
+
+- Images
+
+- Much more...
+
+]
+
+]
+
+???
+
+Traditionally the types are different, but for practical and pedagogical purposes I prefer this list.
+
+---
+
+# Probability distribution of the outcome
+
+
+
+---
+
+# Open Science 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

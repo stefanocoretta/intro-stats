@@ -2,10 +2,14 @@
 title: "Introduction to Language Research<br>Week 7"
 subtitle: "Statistical literacy"
 author: "Stefano Coretta"
-date: "2016/12/12 (updated: `r Sys.Date()`)"
+date: "2021/11/02"
 output:
   xaringan::moon_reader:
     lib_dir: libs
+    css:
+      - default
+      - ipa-fonts.css
+      - custom.css
     nature:
       highlightStyle: github
       highlightLines: true
@@ -49,7 +53,7 @@ Post-doc at the Institute for Phonetics in Munich, Germany. .f6[(ERC project on 
 
 ???
 
-Slido poll "How are you feeling today?".
+Slido poll 
 
 ---
 
@@ -173,15 +177,31 @@ class: inverse
 
 ???
 
-Dealing with uncertainty in the observation.
+So we have to deal with:
 
-Dealing with variability among observations of the same phenomenon.
+- Uncertainty in any one observation of a phenomenon.
+
+- Variability among different observations of the same phenomenon.
+
+---
+
+class: center middle inverse
+
+# ENTER<br>STATISTICS
+
+???
+
+Statistics helps us quantifying uncertainty and variability.
 
 ---
 
 # What is statistics?
 
 .center[<iframe src="https://wall.sli.do/event/hbcigzia?section=6c613f12-b61e-4f61-90a9-291ee28c25af" width="700" height="400"></iframe>]
+
+???
+
+Slido poll.
 
 ---
 
@@ -227,20 +247,19 @@ class: middle
 
 ---
 
-# Scientific crisis
+# Case study: Many Analysts, One Data Set
 
-.center[
-![:scale 80%](img/turing-way.png)
-]
+- 29 independent analysis teams.
 
+- Is there a link between player skin tone and number of red cards in soccer?
 
+- 69% of the teams reported an effect, and 31% did not.
 
+- 21 unique types of statistical analysis.
 
+> The observed results from analyzing a complex data set can be highly contingent on **justifiable**, but **subjective**, analytic decisions.
 
-
-
-
-
+—Silberzahn et al 2018
 
 
 ---
@@ -263,66 +282,165 @@ class: center middle inverse
 
 # How do you do statistics?
 
-- You deal with uncertainty.
+<br>
 
-- You deal with variation.
+.pull-right[
+.f1[**Making sense of the data**, while recognising uncertainty and variability.]
+]
+
+???
+
+Statistics is about **making sense of the data** in light of the questions we asked.
+
+It is also about recognising and embracing uncertainty about outcomes and variability.
+
+EXTRA: If you want to dig deeper into uncertainty, why it is helpful and how to embrace it, have a look at this article: <https://doi.org/10.1515/ling-2019-0051> by Vasishth and Gelman.
 
 ---
 
-# How do you do statistics?
+class: center middle inverse
+
+.f1[Statistics is NOT Maths]
+
+---
+
+# Data analysis process: make sense of the data
 
 ![](img/eda.png)
 
 ???
 
-In other words, how do you do data analysis?
-
----
-
-Data visualisation and modelling
+Data analysis is the process of working with data to discover and understand patterns (or absence of patterns), with the goal of better understanding a particular phenomenon.
 
 ---
 
 # Data viz
 
----
+.center[
+![:scale 70%](img/evol-ggplot-1.gif)
+]
 
-# Modelling (and testing)
+???
 
-All models are wrong, some are less wrong than others.
-
-Uncertainty and variation => ESTIMATION.
-
----
-
-# One model to fit them all
-
-Linear regression models
-
-or simply Linear models
+Source: <https://www.cedricscherer.com/tags/ggplot-evolution/>
 
 ---
 
-[data from Bodo's book]
+# What is a (statistical) model?
 
-# Fit a line
+<br>
 
-```{r}
+.f1[A model is a quantitative representation of the population that generated the data sample.]
 
+---
+
+# Statistical models
+
+.f2[All models are wrong, **some are useful**.]
+
+--
+
+.f2[All models are wrong, **some are less wrong than others**.]
+
+--
+
+<br>
+
+Because of uncertainty and variation, models are an **approximation** of the real-world.
+
+We can only **estimate** the quantitative representation of a phenomenon.
+
+---
+
+# A versatile and simple model: The Line
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+elp <- read_csv("data/ELP_frequency.csv")
+
+elp %>%
+  ggplot(aes(log(Freq), RT)) +
+  geom_point()
 ```
 
 ---
 
-# Give me a line and I will model the world
+# A versatile and simple model: The Line
 
-Linear models can be used for virtually any type of data.
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+elp %>%
+  ggplot(aes(log(Freq), RT)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
 
-Once you learn how to run a linear model, you can use it with anything.
+
+---
+
+# A versatile and simple model: The Line
+
+- Linear regression models or simply **linear models**.
+
+- Linear models can be used for virtually **any type of data**.
+
+--
+
+<br>
+
+.pull-left[
+This means that once you learn how to run a linear model, you can use it with anything.
+]
+
+.pull-right[
+![:scale 60%](img/igor-lypnytskyi-ZVM2mbGVFmY-unsplash.jpg)
+]
+
+???
+
+Photo by <a href="https://unsplash.com/@ilypnytskyi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Igor Lypnytskyi</a> on <a href="https://unsplash.com/s/photos/bicycle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+---
+
+# Resources
+
+.pull-left[
+.center[
+![:scale 68%](img/bodo.png)
+]
+]
+
+.pull-right[
+Excellent beginners textbook for linguistics students.
+
+What I like about it:
+
+- It uses R.
+
+- There's very little maths in it.
+
+- It teaches one thing (linear models) and it does it well.
+
+- It has a fresh take on research.
+]
+
+---
+
+# Resources
+
+- R for Data Science (<https://r4ds.had.co.nz>).
+
+- intRo: Data visualisation with R (<https://intro-rstats.github.io>).
+
+  - Online workshop, Nov 16-17 and 19.
+
+---
+
+class: center middle inverse
+
+# END
 
 ---
 
 # Types of outcome data
-
 
 .panelset[
 .panel[.panel-name[Numeric]
@@ -411,14 +529,3 @@ Unordered groups of 2 or more levels.
 
 ???
 
-Traditionally the types are different, but for practical and pedagogical purposes I prefer this list.
-
----
-
-# Probability distribution of the outcome
-
-
-
----
-
-# Open Science 

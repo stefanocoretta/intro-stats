@@ -22,6 +22,7 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 library(tidyverse)
+theme_set(theme_dark())
 library(xaringanExtra)
 use_xaringan_extra(c("panelset", "tachyons"))
 ```
@@ -35,21 +36,33 @@ class: inverse
 
 # Who am I?
 
-.f2[Stefano [ˈstefano]/[ˈstɛfnəʊ]]
+.pull-left[
+.f1[Stefano]
 
-PhD in Linguistics from the University of Manchester. .f6[(Diss on voicing and segment duration, ultrasound tongue imaging, electroglottography)]
+.f3[[ˈstefano], or [ˈstɛfnəʊ]]
 
-Post-doc at the Institute for Phonetics in Munich, Germany. .f6[(ERC project on nasalisation, real-time MRI)]
+<br>
 
-.f1[Now]...
+<https://stefanocoretta.github.io>
 
-.f3[Senior Teaching Coordinator for Stats at LEL.]
+<https://twitter.com/StefanoCoretta>
+]
+
+--
+
+.pull-right[
+.f2[Joined LEL last this month!]
+
+<br>
+
+.f2[*Senior Teaching Coordinator for Statistics*]
+]
 
 ---
 
-# How are you feeling today?
+class: center middle
 
-.center[<iframe src="https://wall.sli.do/event/hbcigzia?section=6c613f12-b61e-4f61-90a9-291ee28c25af" width="700" height="400"></iframe>]
+![:scale 50%](img/feel.gif)
 
 ???
 
@@ -195,13 +208,28 @@ Statistics helps us quantifying uncertainty and variability.
 
 ---
 
-# What is statistics?
+  .pull-left[
 
-.center[<iframe src="https://wall.sli.do/event/hbcigzia?section=6c613f12-b61e-4f61-90a9-291ee28c25af" width="700" height="400"></iframe>]
+<br>
+
+<br>
+
+.f1[What is statistics?]
+]
+
+.pull-right[
+
+
+![:scale 90%](img/charles-deluvio-Mv9hjnEUHR4-unsplash.jpg)
+]
 
 ???
 
 Slido poll.
+
+EXTRA: Check out the etymology of *statistics* here: <https://en.wiktionary.org/wiki/statistics#Etymology_1>.
+
+Photo by <a href="https://unsplash.com/@charlesdeluvio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Charles Deluvio</a> on <a href="https://unsplash.com/s/photos/dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ---
 
@@ -318,7 +346,7 @@ EXTRA: If you want to dig deeper into uncertainty, why it is helpful and how to 
 
 class: center middle inverse
 
-<span style="font-size: 8em">Statistics is <u>not</u> maths</span>
+<span style="font-size: 4em">Statistics is <u>not</u> maths</span>
 
 ???
 
@@ -362,7 +390,7 @@ Source: <https://www.cedricscherer.com/tags/ggplot-evolution/>
 
 <br>
 
-.f1[A model is a quantitative representation of the population that generated the data sample.]
+.f1[A **model** is a quantitative representation of the population that generated the data sample.]
 
 ---
 
@@ -372,7 +400,7 @@ Source: <https://www.cedricscherer.com/tags/ggplot-evolution/>
 
 --
 
-.f2[All models are wrong, **some are less wrong than others**.]
+.f2[or as I like saying: All models are wrong, **some are less wrong than others**.]
 
 --
 
@@ -386,23 +414,23 @@ We can only **estimate** the quantitative representation of a phenomenon.
 
 # A versatile and simple model: The Line
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, out.height="400px", fig.align='center'}
 elp <- read_csv("data/ELP_frequency.csv")
 
 elp %>%
   ggplot(aes(log(Freq), RT)) +
-  geom_point()
+  geom_point(size = 5, colour = "yellow")
 ```
 
 ---
 
 # A versatile and simple model: The Line
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, out.height="400px", fig.align='center'}
 elp %>%
   ggplot(aes(log(Freq), RT)) +
-  geom_point() +
-  geom_smooth(method = "lm")
+  geom_point(size = 5, colour = "yellow") +
+  geom_smooth(method = "lm", colour = "white")
 ```
 
 
@@ -410,13 +438,11 @@ elp %>%
 
 # A versatile and simple model: The Line
 
-- Linear regression models or simply **linear models**.
+- *Linear regression models*, or simply **LINEAR MODELS**.
 
 - Linear models can be used for virtually **any type of data**.
 
 --
-
-<br>
 
 .pull-left[
 This means that once you learn how to run a linear model, you can use it with anything.
@@ -441,7 +467,7 @@ Photo by <a href="https://unsplash.com/@ilypnytskyi?utm_source=unsplash&utm_medi
 ]
 
 .pull-right[
-Excellent beginners textbook for linguistics students.
+Excellent **beginners textbook** for linguistics students.
 
 What I like about it:
 
@@ -468,9 +494,23 @@ What I like about it:
 
 class: center middle inverse
 
-# END
+# THE END
+
+![:scale 40%](img/ja-san-miguel-_-QQuvAwQ-0-unsplash.jpg)
+
+???
+
+Photo by <a href="https://unsplash.com/@jasanmiguel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ja San Miguel</a> on <a href="https://unsplash.com/s/photos/dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ---
+
+class: center middle inverse
+
+# EXTRAS
+
+---
+
+class: smaller-font
 
 # Types of outcome data
 

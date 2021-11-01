@@ -1,0 +1,218 @@
+---
+title: "Introduction to Language Research<br>Week 7 Exercise"
+subtitle: "Statistical literacy"
+author: "Stefano Coretta"
+date: "2021/11/02"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css:
+      - default
+      - ipa-fonts.css
+      - custom.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "macros.js"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+theme_set(theme_dark())
+library(ggrepel)
+library(xaringanExtra)
+use_xaringan_extra(c("panelset", "tachyons"))
+```
+
+.center[
+![:scale 70%](img/dep-indep.png)
+]
+
+???
+
+**Independent variables**: the variables that are manipulated, the effect of which we are interested in.
+
+**Dependent variable**: the variable affected by the independent variables.
+
+These are also called (more transparently) **predictors** and **outcome** respectively.
+
+From <https://www.pngkit.com/bigpic/u2r5o0u2t4r5o0e6/>
+
+---
+
+```{r data, echo=FALSE, message=FALSE, warning=FALSE, out.height="600px", fig.align='center'}
+elp <- read_csv("data/ELP_frequency.csv")
+
+elp %>%
+  ggplot(aes(log(Freq), RT, label = Word)) +
+  geom_point(size = 5, colour = "yellow") +
+  geom_smooth(method = "lm", colour = "white") +
+  geom_label_repel(size = 20 /.pt) +
+  theme(text = element_text(size = 26))
+```
+
+???
+
+**Predictor**: Logged lexical frequency.
+
+**Outcome**: Reaction Time.
+
+What happens to reaction times (*outcome*) when we change the logged lexical frequency (*predictor*)?
+
+---
+
+# Formal notation
+
+<br>
+
+.center[.f1[.green[RT] ~ .purple[log(Freq)]]]
+
+--
+
+<br>
+
+.center[.f1[.green[*outcome*] ~ .purple[*predictor*]]]
+
+<br>
+
+The tilde `~` means 'as a function of'.
+
+???
+
+.green[Reaction time] *as a function of* .purple[log frequency].
+
+---
+
+# Formal notation
+
+<br>
+
+.center[.f1[.green[RT] ~ .purple[log(Freq) + W_length + ...]]]
+
+<br>
+
+There can be many predictors.
+
+???
+
+In fact there can also be more than one outcome variable, but you can ignore that.
+
+Models with more than one outcome variable are called *multivariate* models.
+
+NOTE: Linear regressions with one predictor are called *simple* linear regressions, while those with more than one predictor are called *multiple* or *multivariable* linear regressions. You don't have to remember this in order to be able to use linear models. They all work the same.
+
+---
+
+.pull-left[
+<br>
+
+.f1[Think carefully about the outcome variable you have to analyse.]
+]
+
+.pull-right[
+.center[![:scale 70%](img/arif-hidayat-mGQ5-MTqRbQ-unsplash.jpg)]
+]
+
+???
+
+We won't go into the technical details, but the type of specific linear model depends on the type of outcome variable.
+
+Photo by <a href="https://unsplash.com/@rifhdyt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Arif Hidayat</a> on <a href="https://unsplash.com/s/photos/hedgehog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+EXTRA: If you *are* curious about the technicalities, you can have a read here: https://stefanocoretta.github.io/post/2021-08-21-regression-models-a-cheat-sheet/ You need to have a basic understanding of probability distributions in order to get the most out of the post.
+
+---
+
+class: smaller-font
+
+# Types of outcome variables
+
+.panelset[
+.panel[.panel-name[Numeric]
+
+- Positive and negative numbers (can be 0).
+
+  - Decibel (dB).
+  
+  - Log frequencies.
+
+- Only positive numbers (cannot be 0).
+
+  - Duration of speech units (segments, gestures, syllables, words, sentences, etc)
+  
+  - Hertz (f0 and formant frequencies).
+
+]
+
+.panel[.panel-name[Count]
+
+- Number of hits in a corpus.
+
+- Number of occurrences of Double Object construction vs Indirect Object construction.
+
+- Number of VO vs OV languages.
+
+- Number of hand-pointing gestures.
+
+- Number of hesitations.
+
+- Any count of something...
+
+]
+
+.panel[.panel-name[Ordered scales]
+
+- Any numbered scale (Likert, 0-10, 0-5, etc).
+
+- Ratings.
+
+  - Acceptability judgments.
+
+  - Language attitude.
+
+]
+
+.panel[.panel-name[Binary]
+
+- Yes/no.
+
+- Right/Wrong.
+
+- True/false.
+
+- Real word/nonce word.
+
+- Anything that can be conceptualised as 0 vs 1.
+
+]
+
+.panel[.panel-name[Categorical]
+
+Unordered groups of 2 or more levels.
+
+- North/Center/South.
+
+- Young/Adult.
+
+- Non-binary/Fluid/Female/Male.
+
+]
+
+.panel[.panel-name[Other]
+
+- Time series
+
+- Coordinates
+
+- Images
+
+- Much more...
+
+]
+
+]
+
+???

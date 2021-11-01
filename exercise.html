@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to Language Research Week 7 Exercise</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Stefano Coretta" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="ipa-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to Language Research<br>Week 7 Exercise
+## Statistical literacy
+### Stefano Coretta
+### 2021/11/02
+
+---
+
+
+
+
+.center[
+![:scale 70%](img/dep-indep.png)
+]
+
+???
+
+**Independent variables**: the variables that are manipulated, the effect of which we are interested in.
+
+**Dependent variable**: the variable affected by the independent variables.
+
+These are also called (more transparently) **predictors** and **outcome** respectively.
+
+From &lt;https://www.pngkit.com/bigpic/u2r5o0u2t4r5o0e6/&gt;
+
+---
+
+&lt;img src="exercise_files/figure-html/data-1.png" height="600px" style="display: block; margin: auto;" /&gt;
+
+???
+
+**Predictor**: Logged lexical frequency.
+
+**Outcome**: Reaction Time.
+
+What happens to reaction times (*outcome*) when we change the logged lexical frequency (*predictor*)?
+
+---
+
+# Formal notation
+
+&lt;br&gt;
+
+.center[.f1[.green[RT] ~ .purple[log(Freq)]]]
+
+--
+
+&lt;br&gt;
+
+.center[.f1[.green[*outcome*] ~ .purple[*predictor*]]]
+
+&lt;br&gt;
+
+The tilde `~` means 'as a function of'.
+
+???
+
+.green[Reaction time] *as a function of* .purple[log frequency].
+
+---
+
+# Formal notation
+
+&lt;br&gt;
+
+.center[.f1[.green[RT] ~ .purple[log(Freq) + W_length + ...]]]
+
+&lt;br&gt;
+
+There can be many predictors.
+
+???
+
+In fact there can also be more than one outcome variable, but you can ignore that.
+
+Models with more than one outcome variable are called *multivariate* models.
+
+NOTE: Linear regressions with one predictor are called *simple* linear regressions, while those with more than one predictor are called *multiple* or *multivariable* linear regressions. You don't have to remember this in order to be able to use linear models. They all work the same.
+
+---
+
+.pull-left[
+&lt;br&gt;
+
+.f1[Think carefully about the outcome variable you have to analyse.]
+]
+
+.pull-right[
+.center[![:scale 70%](img/arif-hidayat-mGQ5-MTqRbQ-unsplash.jpg)]
+]
+
+???
+
+We won't go into the technical details, but the type of specific linear model depends on the type of outcome variable.
+
+Photo by &lt;a href="https://unsplash.com/@rifhdyt?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"&gt;Arif Hidayat&lt;/a&gt; on &lt;a href="https://unsplash.com/s/photos/hedgehog?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"&gt;Unsplash&lt;/a&gt;
+
+EXTRA: If you *are* curious about the technicalities, you can have a read here: https://stefanocoretta.github.io/post/2021-08-21-regression-models-a-cheat-sheet/ You need to have a basic understanding of probability distributions in order to get the most out of the post.
+
+---
+
+class: smaller-font
+
+# Types of outcome variables
+
+.panelset[
+.panel[.panel-name[Numeric]
+
+- Positive and negative numbers (can be 0).
+
+  - Decibel (dB).
+  
+  - Log frequencies.
+
+- Only positive numbers (cannot be 0).
+
+  - Duration of speech units (segments, gestures, syllables, words, sentences, etc)
+  
+  - Hertz (f0 and formant frequencies).
+
+]
+
+.panel[.panel-name[Count]
+
+- Number of hits in a corpus.
+
+- Number of occurrences of Double Object construction vs Indirect Object construction.
+
+- Number of VO vs OV languages.
+
+- Number of hand-pointing gestures.
+
+- Number of hesitations.
+
+- Any count of something...
+
+]
+
+.panel[.panel-name[Ordered scales]
+
+- Any numbered scale (Likert, 0-10, 0-5, etc).
+
+- Ratings.
+
+  - Acceptability judgments.
+
+  - Language attitude.
+
+]
+
+.panel[.panel-name[Binary]
+
+- Yes/no.
+
+- Right/Wrong.
+
+- True/false.
+
+- Real word/nonce word.
+
+- Anything that can be conceptualised as 0 vs 1.
+
+]
+
+.panel[.panel-name[Categorical]
+
+Unordered groups of 2 or more levels.
+
+- North/Center/South.
+
+- Young/Adult.
+
+- Non-binary/Fluid/Female/Male.
+
+]
+
+.panel[.panel-name[Other]
+
+- Time series
+
+- Coordinates
+
+- Images
+
+- Much more...
+
+]
+
+]
+
+???
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

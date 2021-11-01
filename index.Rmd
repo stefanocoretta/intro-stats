@@ -419,7 +419,8 @@ elp <- read_csv("data/ELP_frequency.csv")
 
 elp %>%
   ggplot(aes(log(Freq), RT)) +
-  geom_point(size = 5, colour = "yellow")
+  geom_point(size = 5, colour = "yellow") +
+  theme(text = element_text(size = 26))
 ```
 
 ---
@@ -430,7 +431,8 @@ elp %>%
 elp %>%
   ggplot(aes(log(Freq), RT)) +
   geom_point(size = 5, colour = "yellow") +
-  geom_smooth(method = "lm", colour = "white")
+  geom_smooth(method = "lm", colour = "white") +
+  theme(text = element_text(size = 26))
 ```
 
 
@@ -509,103 +511,3 @@ class: center middle inverse
 ???
 
 Photo by <a href="https://unsplash.com/@jasanmiguel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ja San Miguel</a> on <a href="https://unsplash.com/s/photos/dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
----
-
-class: center middle inverse
-
-# EXTRAS
-
----
-
-class: smaller-font
-
-# Types of outcome data
-
-.panelset[
-.panel[.panel-name[Numeric]
-
-- Positive and negative numbers (can be 0).
-
-  - Decibel (dB).
-  
-  - Log frequencies.
-
-- Only positive numbers (cannot be 0).
-
-  - Duration of speech units (segments, gestures, syllables, words, sentences, etc)
-  
-  - Hertz (f0 and formant frequencies).
-
-]
-
-.panel[.panel-name[Count]
-
-- Number of hits in a corpus.
-
-- Number of occurrences of Double Object construction vs Indirect Object construction.
-
-- Number of VO vs OV languages.
-
-- Number of hand-pointing gestures.
-
-- Number of hesitations.
-
-- Any count of something...
-
-]
-
-.panel[.panel-name[Ordered scales]
-
-- Any numbered scale (Likert, 0-10, 0-5, etc).
-
-- Ratings.
-
-  - Acceptability judgments.
-
-  - Language attitude.
-
-]
-
-.panel[.panel-name[Binary]
-
-- Yes/no.
-
-- Right/Wrong.
-
-- True/false.
-
-- Real word/nonce word.
-
-- Anything that can be conceptualised as 0 vs 1.
-
-]
-
-.panel[.panel-name[Categorical]
-
-Unordered groups of 2 or more levels.
-
-- North/Center/South.
-
-- Young/Adult.
-
-- Non-binary/Fluid/Female/Male.
-
-]
-
-.panel[.panel-name[Other]
-
-- Time series
-
-- Coordinates
-
-- Images
-
-- Much more...
-
-]
-
-]
-
-???
-

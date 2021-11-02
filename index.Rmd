@@ -24,7 +24,7 @@ options(htmltools.dir.version = FALSE)
 library(tidyverse)
 theme_set(theme_dark())
 library(xaringanExtra)
-use_xaringan_extra(c("panelset", "tachyons"))
+use_xaringan_extra(c("panelset", "tachyons", "freezeframe"))
 ```
 
 class: inverse

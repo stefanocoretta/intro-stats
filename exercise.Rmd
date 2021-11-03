@@ -39,7 +39,11 @@ use_xaringan_extra(c("panelset", "tachyons"))
 
 These are also called (more transparently) **predictors** and **outcome** respectively.
 
-From <https://www.pngkit.com/bigpic/u2r5o0u2t4r5o0e6/>
+**TASK 1**. Have a look at the figure in this slides and try to come up with an example using linguistic data (any kind of data will do) that has the same structure of the figure (i.e. two independent variables/predictors and one dependent variable/outcome).
+
+<br>
+
+.f6[Image from <https://www.pngkit.com/bigpic/u2r5o0u2t4r5o0e6/>]
 
 ---
 
@@ -56,11 +60,17 @@ elp %>%
 
 ???
 
-**Predictor**: Logged lexical frequency.
+This is the same data that you saw during the lecture on Tuesday.
 
-**Outcome**: Reaction Time.
+It's from a lexical decision task, where participants had to say whether the word on the screen was a real or a nonce word.
 
-What happens to reaction times (*outcome*) when we change the logged lexical frequency (*predictor*)?
+Real words differed by lexical frequency. 
+
+**Predictor**: Logged lexical frequency, `log(Freq)`.
+
+**Outcome**: Reaction Time, `RT`.
+
+**TASK 2**: What happens to reaction times (*outcome*) when we change the logged lexical frequency (*predictor*)?
 
 ---
 
@@ -78,7 +88,7 @@ What happens to reaction times (*outcome*) when we change the logged lexical fre
 
 <br>
 
-The tilde `~` means 'as a function of'.
+The tilde `~` can be read as 'as a function of'.
 
 ???
 
@@ -98,18 +108,24 @@ There can be many predictors.
 
 ???
 
-In fact there can also be more than one outcome variable, but you can ignore that.
+There can be many predictors, not just one.
 
-Models with more than one outcome variable are called *multivariate* models.
+In this example I have added word length `W_length`.
 
-NOTE: Linear regressions with one predictor are called *simple* linear regressions, while those with more than one predictor are called *multiple* or *multivariable* linear regressions. You don't have to remember this in order to be able to use linear models. They all work the same.
+In fact there can also be more than one outcome variable. Models with more than one outcome variable are called *multivariate* models. But you can safely ignore this, since it is very unlikely that you will need to use a multivariate model.
+
+**CHALLENGE 1**: In the previous example, with only `RT` and `log(Freq)` we used a [scatter plot](https://chartio.com/learn/charts/what-is-a-scatter-plot/). In this example we have one outcome and two predictors. They are all continuous predictors. Challenge yourself and think about which type of graph might be suitable to show the three variables in one single plot. You can find inspiration here: <https://plotly.com/r/statistical-charts/>. 
+
+<br>
+
+.f6[NOTE: Linear regressions with one predictor are called *simple* linear regressions, while those with more than one predictor are called *multiple* or *multivariable* linear regressions. You don't have to remember this in order to be able to use linear models. They all work the same.]
 
 ---
 
 .pull-left[
 <br>
 
-.f1[Think carefully about the outcome variable you have to analyse.]
+.f1[It is *very* important to think carefully about the type of outcome variable you have to analyse.]
 ]
 
 .pull-right[
@@ -118,11 +134,15 @@ NOTE: Linear regressions with one predictor are called *simple* linear regressio
 
 ???
 
-We won't go into the technical details, but the type of specific linear model depends on the type of outcome variable.
+We won't go into the technical details, but the specific type of linear model you can use to analyse your data depends on the type of outcome variable.
 
-Photo by <a href="https://unsplash.com/@rifhdyt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Arif Hidayat</a> on <a href="https://unsplash.com/s/photos/hedgehog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+The next slide talks about different types of outcome variables you might encounter/need to analyse.
 
-EXTRA: If you *are* curious about the technicalities, you can have a read here: https://stefanocoretta.github.io/post/2021-08-21-regression-models-a-cheat-sheet/ You need to have a basic understanding of probability distributions in order to get the most out of the post.
+<br>
+
+.f6[EXTRA: If you *are* curious about the technicalities, you can have a read here: https://stefanocoretta.github.io/post/2021-08-21-regression-models-a-cheat-sheet/ You need to have a basic understanding of probability distributions in order to get the most out of the post.]
+
+.f6[Photo by <a href="https://unsplash.com/@rifhdyt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Arif Hidayat</a> on <a href="https://unsplash.com/s/photos/hedgehog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>]
 
 ---
 
@@ -133,21 +153,29 @@ class: smaller-font
 .panelset[
 .panel[.panel-name[Numeric]
 
-- Positive and negative numbers (can be 0).
+**Numeric variables** are... just numbers.
+
+There are two major types of numeric variables. Variables that can take on positive and negative numbers and variables that only take on positive numbers.
+
+- Positive and negative numbers (they can include 0).
 
   - Decibel (dB).
   
   - Log frequencies.
 
-- Only positive numbers (cannot be 0).
+- Only positive numbers (they generally cannot be 0).
 
-  - Duration of speech units (segments, gestures, syllables, words, sentences, etc)
+  - Duration of speech units (segments, gestures, syllables, words, sentences, etc).
   
   - Hertz (f0 and formant frequencies).
 
 ]
 
 .panel[.panel-name[Count]
+
+**Count variables** are simply counts of something.
+
+For example:
 
 - Number of hits in a corpus.
 
@@ -165,49 +193,64 @@ class: smaller-font
 
 .panel[.panel-name[Ordered scales]
 
+**Ordered scales** are any scale in which each level or point follows a specific order.
+
 - Any numbered scale (Likert, 0-10, 0-5, etc).
 
 - Ratings.
 
   - Acceptability judgments.
 
-  - Language attitude.
+  - Language attitude rating.
 
 ]
 
 .panel[.panel-name[Binary]
 
+A **binary** variable is a variable with two levels like yes/no or true/false.
+
+Examples:
+
 - Yes/no.
 
-- Right/Wrong.
+- Right/wrong.
 
 - True/false.
 
 - Real word/nonce word.
 
-- Anything that can be conceptualised as 0 vs 1.
+- Anything that can be conceptualised as "0 vs 1" or "ABSENT vs PRESENT".
 
 ]
 
 .panel[.panel-name[Categorical]
 
-Unordered groups of 2 or more levels.
+**Categorical variables** are unordered groups of 2 or more levels. They are **unordered** because, differently from ordered scales, the order of the levels in the variable doesn't really matter.
 
-- North/Center/South.
+- Location: North/Center/South.
 
-- Young/Adult.
+- Age group: Young/adult.
 
-- Non-binary/Fluid/Female/Male.
+- Gender: Non-binary/fluid/female/male.
 
 ]
 
 .panel[.panel-name[Other]
 
-- Time series
+There are other types of variables that do not fall into the previous categories.
 
-- Coordinates
+- Time series:
 
-- Images
+  - f0 or formant measurements taken at several time points within a vowel.
+  - Longitudinal data of child speech productions.
+
+- Coordinates:
+
+  - Geographic coordinates of tweets.
+
+- Images:
+
+  - Ultrasound tongue imaging or MRI.
 
 - Much more...
 
@@ -216,3 +259,15 @@ Unordered groups of 2 or more levels.
 ]
 
 ???
+
+Use the left/right arrows to move from one panel to the other, or click on the panel name.
+
+---
+
+class: middle center inverse
+
+# Final exercise
+
+???
+
+**TASK 3**: Pick three types of outcome variables and think about a couple extra examples of linguistic data for each type.

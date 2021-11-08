@@ -72,6 +72,8 @@ Real words differed by lexical frequency.
 
 **TASK 2**: What happens to reaction times (*outcome*) when we change the logged lexical frequency (*predictor*)?
 
+.f6[EXTRA: What are logs? Why is lexical frequency logged? You can try to log a few numbers in R using the `log()` function. What is the inverse of logging a number?]
+
 ---
 
 # Formal notation
@@ -271,3 +273,7 @@ class: middle center inverse
 ???
 
 **TASK 3**: Pick three types of outcome variables and think about a couple extra examples of linguistic data for each type.
+
+**CHALLENGE 2**: Now that you learnt about different types of outcome variables, you can think about *probability distributions*. If you know what probability distributions are, you can try and find out which probability distribution would be most appropriate to describe the different types of outcome variables. Wikipedia can be a good place to start looking.
+
+If you have never heard of probability distributions before, you can check this video <https://youtu.be/Fw3zINXK9q4>.
